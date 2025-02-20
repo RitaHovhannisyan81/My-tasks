@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tasks/screens/add_tasks.dart';
 import 'package:tasks/screens/all_tasks.dart';
+import 'package:tasks/screens/connected_devices_screen.dart';
 import 'package:tasks/widgets/button_widget.dart';
 import 'package:get/get.dart';
 
@@ -41,8 +42,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+
             SizedBox(
-              height: MediaQuery.of(context).size.height / 2.5,
+              height: 20,
+            ),
+            InkWell(
+              onTap: () {
+                Get.to(() => ConnectedDevices (),
+                transition: Transition.zoom,duration: Duration(seconds: 1));
+              },
+              child: ButtonWidget(
+                text: "Connected Devices",
+                Backgroundcolor: Color.fromARGB(255, 34, 62, 109),
+                textColor: Color.fromARGB(255, 231, 234, 238),
+              ),
+            ),
+
+
+            SizedBox(
+            height: 20,
             ),
             InkWell(
               onTap: () {
